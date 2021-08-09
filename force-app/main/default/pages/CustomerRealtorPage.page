@@ -1,8 +1,9 @@
-<apex:page standardController="Customer__c" recordSetVar="customers">
+<apex:page standardController="Customer__c" recordSetVar="customers" lightningStylesheets="true">
     <apex:pageBlock>
         <apex:pageBlockTable value="{! customers }" var="customer">
             <apex:column>
-                <apex:outputField value="{! customer.Realtor__r.Name }" />
+                <apex:facet name="header">{! customer.Realtor__r.Name }</apex:facet>
+                <apex:outputField value="{! customer.Name }" />
             </apex:column>
         </apex:pageBlockTable>
     </apex:pageBlock>
