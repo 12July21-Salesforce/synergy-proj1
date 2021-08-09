@@ -6,7 +6,7 @@ public with sharing class CustomerRealtor_CX {
         this.customers = (List<Customer__c>) stdSetController.getRecords();
     }
 
-    public PageReference createRealtor() {
+    public PageReference newRealtor() {
         return  Page.RealtorCreationPage;
     }
 }

@@ -1,5 +1,19 @@
 public with sharing class CreateRealtor_CC {
-    public CreateRealtor_CC() {
+    public Realtor__c realtor {
+        get {
+            if (realtor == null) {
+                realtor = new Realtor__c();
+            }
+            return realtor;
+        }
+        set;
+    }
 
+    public void saveRealtor() {
+        Database.upsert(realtor);
+    }
+
+    public PageReference backToCustomer() {
+        return Page.CustomerRealtorPage;
     }
 }
