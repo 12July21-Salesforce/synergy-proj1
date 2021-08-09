@@ -1,0 +1,9 @@
+<apex:page standardController="Customer__c" recordSetVar="customers">
+    <apex:pageBlock>
+        <apex:pageBlockTable value="{! customers }" var="customer">
+            <apex:column>
+                <apex:outputField value="{! customer.Realtor__r.Name }" />
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>
