@@ -10,7 +10,6 @@
             </apex:pageBlockSection>
             <apex:pageBlockButtons>
                 <apex:commandButton action="{! saveRealtor }" value="Save" />
-                <apex:commandButton action="{! backToCustomer }" value="Back to Customer" />
             </apex:pageBlockButtons>
         </apex:pageBlock>
     </apex:form>

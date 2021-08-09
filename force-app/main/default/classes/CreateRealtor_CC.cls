@@ -9,11 +9,8 @@ public with sharing class CreateRealtor_CC {
         set;
     }
 
-    public void saveRealtor() {
+    public PageReference saveRealtor() {
         Database.upsert(realtor);
-    }
-
-    public PageReference backToCustomer() {
-        return Page.CustomerRealtorPage;
+        return Page.RealtorCreatedPage;
     }
 }
