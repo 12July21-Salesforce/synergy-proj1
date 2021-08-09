@@ -1,10 +1,15 @@
-<apex:page standardController="Customer__c" recordSetVar="customers" lightningStylesheets="true">
-    <apex:pageBlock>
-        <apex:pageBlockTable value="{! customers }" var="customer">
-            <apex:column>
-                <apex:facet name="header">{! customer.Realtor__r.Name }</apex:facet>
-                <apex:outputField value="{! customer.Name }" />
-            </apex:column>
-        </apex:pageBlockTable>
-    </apex:pageBlock>
+<apex:page standardController="Customer__c" recordSetVar="customers" lightningStylesheets="true" extensions="CustomerRealtor_CX">
+    <apex:form>
+        <apex:pageBlock>
+            <apex:pageBlockTable value="{! customers }" var="customer">
+                <apex:column>
+                    <apex:facet name="header">{! customer.Realtor__r.Name }</apex:facet>
+                    <apex:outputField value="{! customer.Name }" />
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons>
+                <apex:commandButton action="{! createRealtor }" value="New Realtor" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
 </apex:page>
