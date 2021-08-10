@@ -15,6 +15,12 @@
                         Page: &nbsp; <apex:outputText value="{! PageNumber } of {! CEILING(ResultSize / PageSize) }" />
                     </td>
                     <td align="center">
+                        <!-- First page -->
+                        <!-- active -->
+                        <apex:commandLink action="{! First }" value="|« First" rendered="{! HasPrevious }" />
+                        <!-- inactive -->
+                        <apex:commandLink style="color: #ccc" value="|« First" rendered="{! NOT(HasPrevious) }" />
+                        &nbsp;
                         <!-- Previous page -->
                         <!-- active -->
                         <apex:commandLink action="{! Previous }" value="« Previous" rendered="{! HasPrevious }" />
@@ -26,6 +32,12 @@
                         <apex:commandLink action="{! Next }" value="Next »" rendered="{! HasNext }" />
                         <!-- inactive -->
                         <apex:commandLink style="color: #ccc" value="Next »" rendered="{! NOT(HasNext) }" />
+                        &nbsp;
+                        <!-- Last page -->
+                        <!-- active -->
+                        <apex:commandLink action="{! Last }" value="Last »|" rendered="{! HasNext }" />
+                        <!-- inactive -->
+                        <apex:commandLink style="color: #ccc" value="Last »|" rendered="{! NOT(HasNext) }" />
                     </td>
                     <td align="right">
                         Records per page:
