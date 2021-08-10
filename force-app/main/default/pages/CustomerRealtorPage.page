@@ -3,10 +3,7 @@
         <apex:pageBlock>
             <apex:pageMessages />
             <apex:pageBlockTable value="{! customers }" var="customer">
-                <apex:column>
-                    <apex:facet name="header">{! customer.Realtor__r.Name }</apex:facet>
-                    <apex:outputField value="{! customer.Name }" />
-                </apex:column>
+                <apex:column headerValue="Realtor Name"><apex:outputLink value="{! URLFOR($Action.Customer__c.View, customer.id) }">{! customer.Realtor__r.Name }</apex:outputLink></apex:column>
             </apex:pageBlockTable>
             <apex:pageBlockButtons>
                 <apex:commandButton action="{! newRealtor }" value="New Realtor" />
