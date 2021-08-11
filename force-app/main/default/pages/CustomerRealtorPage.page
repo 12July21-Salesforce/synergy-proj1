@@ -40,7 +40,7 @@
                         <apex:commandLink style="color: #ccc" value="Last »|" rendered="{! NOT(setCon.HasNext) }" />
                     </td>
                     <td align="right">
-                        Records per page:
+                        Records per page:&nbsp;
                         <apex:selectList value="{! setCon.PageSize }" size="1">
                             <apex:selectOption itemValue="5" itemLabel="5"/>
                             <apex:selectOption itemValue="20" itemLabel="20"/>
