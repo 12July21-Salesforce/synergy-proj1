@@ -2,6 +2,7 @@ public with sharing class LotShowExtension {
     
     private final Lot__c lot;
     private List<String> statuses;
+    public String state {get; set;}
 
     public LotShowExtension(ApexPages.StandardSetController stdController) {
         lot = (Lot__c) stdController.getRecord();
@@ -18,9 +19,24 @@ public with sharing class LotShowExtension {
             if(purchasableLots == null){
                 purchasableLots = [SELECT Id, Name, Status__c, Address__c, State__c, Home_Type__c 
                                     FROM Lot__c 
-                                    WHERE Status__c IN :statuses];
+                                    WHERE Status__c IN :statuses
+                                    AND State__c = :state];
+                resultSize = purchasableLots.size();
             }
             return purchasableLots;
+        }
+        private set;
+    }
+
+    public Integer resultSize{
+        get{
+            if(resultSize == null){
+                purchasableLots = [SELECT Id, Name, Status__c, Address__c, State__c, Home_Type__c 
+                FROM Lot__c 
+                WHERE Status__c IN :statuses];
+                resultSize = purchasableLots.size();
+            }
+            return resultSize;
         }
         private set;
     }
