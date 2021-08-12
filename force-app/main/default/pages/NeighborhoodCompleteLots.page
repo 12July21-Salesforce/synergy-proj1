@@ -1,4 +1,14 @@
 <apex:page controller="NeighborhoodCompleteLots_CC">
     <apex:variable var="imageVar" value="{!imageName}" />
     <apex:image url="{!URLFOR($Resource.houseImages, imageVar)}" width="200" height="200"/>
+    
+    <apex:pageBlock title="Demo Block">
+        <apex:pageBlockTable value="{!completeList}" var="lst">
+           <!-- <apex:column value="{!lst.neighborhood__c}"/> TODO: THIS IS NOT PULLING YET-->
+         
+        </apex:pageBlockTable>
+        
+    
+    </apex:pageBlock>
+    
 </apex:page>
