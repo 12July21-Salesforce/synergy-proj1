@@ -1,39 +1,22 @@
 public class NeighborhoodCompleteLots_CC {
-        
-    public List<NeighborhoodWrapper> hoodList {
-        get {
-            if(hoodList == null){
-                hoodList = new List<NeighborhoodWrapper>();
-                String imagePath = '';
-                for(Neighborhood__c hood : [SELECT Name, Status__c, City__c, State__c, Zip_Code__c,
-                                    (SELECT Name, Home_Type__c FROM Lots__r ) FROM Neighborhood__c]){
-                    
-                    
-                    for(Lot__c lot : hood.Lots__r){
-                        imagePath = 'house-images/' + lot.Name + '.jpg';
-                        hoodList.add(new NeighborhoodWrapper(hood, lot, imagePath));                     
-                    }                                                     
-            }
-               
-        }
-             return hoodList;
-           
-    }
-        set;
-        
+    
+    public String getImageName(){
+        return 'house-images/SB-01.jpg';
     }
     
-    public class NeighborhoodWrapper{
-        public Neighborhood__c hood {get; set;}
-        public Lot__c lot {get; set;}
-        public String imageNumber {get; set;}
+    //Just trying to breakdown the process to solve the SOQL mystery
+    public List<Neighborhood__c> getNeighborhoods() {
         
-        public NeighborhoodWrapper(Neighborhood__c h, Lot__c l, String i){
-            this.hood = h;
-            this.lot = l;
-            this.imageNumber = i;
+        List<Neighborhood__c> results = new List<Neighborhood__c>();
+        for(Neighborhood__c hood : [SELECT Name, Status__c, City__c, State__c, Zip_Code__c,
+                                    (SELECT Name, Home_Type__c FROM Lots__r ) FROM Neighborhood__c]){
+                                        
             
+            results.add(hood);       
         }
-    }
+        
+        return results;
+        
+    } 
     
 }
