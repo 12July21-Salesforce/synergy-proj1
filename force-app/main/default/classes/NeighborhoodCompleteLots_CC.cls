@@ -8,8 +8,8 @@ public class NeighborhoodCompleteLots_CC {
     public List<Neighborhood__c> getNeighborhoods() {
         
         List<Neighborhood__c> results = new List<Neighborhood__c>();
-        for(Neighborhood__c hood : [SELECT Name FROM Neighborhood__c]){
-            results.add(hood);
+        for(Neighborhood__c hood : [SELECT Name, (SELECT Name FROM Lots__r ) FROM Neighborhood__c]){
+            results.add(hood);       
         }
     
     return results;

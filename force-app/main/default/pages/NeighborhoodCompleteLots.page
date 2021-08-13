@@ -1,16 +1,36 @@
 <apex:page controller="NeighborhoodCompleteLots_CC">
-    <apex:variable var="imageVar" value="{!imageName}" />
-    <apex:image url="{!URLFOR($Resource.houseImages, imageVar)}" width="200" height="200"/>
     
-    <apex:pageBlock title="Demo Block">
+    
+    
+
+    
+    <apex:repeat value="{!neighborhoods}" var="n"> <!-- repeat for each neighborhood -->
+        
+    	<apex:pageBlock title="{!n.Name}">         
+            
+            
+        <apex:pageBlockTable value="{!n.Lots__r}" var="l"> <!-- Put all children lots in a table-->
+            <apex:facet name="header">Complete Lots Available for Sale</apex:facet>
+            <apex:column value="{!l.Name}"/>
+            <apex:column>
+                <apex:variable var="imageVar" value="{!imageName}" />
+    			<apex:image url="{!URLFOR($Resource.houseImages, imageVar)}" width="100" height="100"/>
+            </apex:column>
+        </apex:pageBlockTable>
+            
+        </apex:pageBlock>
+
+    </apex:repeat>
+    
+    <!-- <apex:pageBlock title="Demo Block">
         <apex:pageBlockTable value="{!neighborhoods}" var="n">
             <apex:column value="{!n.Name}" />
+            
 
-           <!-- <apex:column value="{!lst.neighborhood__c.Name}"/> TODO: THIS IS NOT PULLING YET-->
-         
+        
         </apex:pageBlockTable>
         
     
-    </apex:pageBlock>
+    </apex:pageBlock> -->
     
 </apex:page>
