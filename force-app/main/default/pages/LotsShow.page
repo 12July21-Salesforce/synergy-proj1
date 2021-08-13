@@ -4,7 +4,7 @@
             <!--Filter by State:
             <apex:selectList size="1" value="{!state}">
                 <apex:actionSupport event="onchange" rerender="lotsForSell"/>
-                <apex:selectOption itemLabel=
+                <apex:selectOptions value="{!}"/>
             </apex:selectList>-->
             <apex:pageBlockButtons >
                 <apex:commandButton value="|<" title="First" action="{!first}" disabled="{!NOT(HasPrevious)}" />

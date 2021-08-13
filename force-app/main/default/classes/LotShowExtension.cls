@@ -14,6 +14,15 @@ public with sharing class LotShowExtension {
         //allows users to specify what kinds of lots to show
     }
 
+    /*public List<SelectOption> getStateOptions(){
+        List<SelectOption> options = new List<SelectOption>();
+        List<Schema.PicklistEntry> states = Lot__c.State__c.getDescribe().getPicklistValues();
+        for(Integer i = 0; i < 50; i++){
+            options.add(new SelectOption(states[i].toString(), states[i].toString()))
+        }
+        return options;
+    }*/
+
     public List<Lot__c> queryLots(){
         //Query for lots in its own function to help with maintaining code
         return [SELECT Id, Name, Status__c, Address__c, State__c, Home_Type__c 
@@ -42,5 +51,10 @@ public with sharing class LotShowExtension {
             return resultSize;
         }
         private set;
+    }
+
+    public void resultSizeNull(){
+        resultSize = null;
+        purchasableLots = null;
     }
 }
