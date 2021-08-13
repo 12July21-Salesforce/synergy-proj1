@@ -14,13 +14,18 @@ public with sharing class LotShowExtension {
         //allows users to specify what kinds of lots to show
     }
 
+    public List<Lot__c> queryLots(){
+        //Query for lots in its own function to help with maintaining code
+        return [SELECT Id, Name, Status__c, Address__c, State__c, Home_Type__c 
+        FROM Lot__c 
+        WHERE Status__c IN :statuses
+        /*AND State__c = :state*/];
+    }
+
     public List<Lot__c> purchasableLots{
         get{
             if(purchasableLots == null){
-                purchasableLots = [SELECT Id, Name, Status__c, Address__c, State__c, Home_Type__c 
-                                    FROM Lot__c 
-                                    WHERE Status__c IN :statuses
-                                    AND State__c = :state];
+                purchasableLots = queryLots();
                 resultSize = purchasableLots.size();
             }
             return purchasableLots;
@@ -31,9 +36,7 @@ public with sharing class LotShowExtension {
     public Integer resultSize{
         get{
             if(resultSize == null){
-                purchasableLots = [SELECT Id, Name, Status__c, Address__c, State__c, Home_Type__c 
-                FROM Lot__c 
-                WHERE Status__c IN :statuses];
+                purchasableLots = queryLots();
                 resultSize = purchasableLots.size();
             }
             return resultSize;
