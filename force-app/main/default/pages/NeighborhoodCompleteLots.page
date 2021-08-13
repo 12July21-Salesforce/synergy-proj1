@@ -3,8 +3,10 @@
     <apex:image url="{!URLFOR($Resource.houseImages, imageVar)}" width="200" height="200"/>
     
     <apex:pageBlock title="Demo Block">
-        <apex:pageBlockTable value="{!completeList}" var="lst">
-           <!-- <apex:column value="{!lst.neighborhood__c}"/> TODO: THIS IS NOT PULLING YET-->
+        <apex:pageBlockTable value="{!neighborhoods}" var="n">
+            <apex:column value="{!n.Name}" />
+
+           <!-- <apex:column value="{!lst.neighborhood__c.Name}"/> TODO: THIS IS NOT PULLING YET-->
          
         </apex:pageBlockTable>
         

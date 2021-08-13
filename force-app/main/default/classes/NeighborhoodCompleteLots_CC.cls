@@ -4,7 +4,19 @@ public class NeighborhoodCompleteLots_CC {
         return 'house-images/house1.jfif';
     }
 
+    //Just trying to breakdown the process to solve the SOQL mystery
+    public List<Neighborhood__c> getNeighborhoods() {
+        
+        List<Neighborhood__c> results = new List<Neighborhood__c>();
+        for(Neighborhood__c hood : [SELECT Name FROM Neighborhood__c]){
+            results.add(hood);
+        }
+    
+    return results;
 
+} 
+    
+    /*
     public List<CompleteLotsWrapper> completeList {
         get {
             if(completeList == null){
@@ -17,29 +29,18 @@ public class NeighborhoodCompleteLots_CC {
                         
                         //TODO: This is going to add neighborhood too many times
                         completeList.add(new CompleteLotsWrapper(hood, lot, testString)); 
-                    }
-                    
-                
-                
-                
-                }//end for
-            
-            
+                    }    
+                }//end for 
             }//end if
             
             return completeList;
-        
-        
-        
-        
-        
         }//end get
         
         set;
-    
-    
-    
+
     }//end end
+
+    */
 
 
 
