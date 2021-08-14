@@ -3,7 +3,7 @@ public with sharing class LotRealtorCX {
     private final Realtor__c baseRealtor;
 
      public LotRealtorCX(ApexPages.StandardController stdController){
-         baseRealtor = stdController.getRecord();
+         baseRealtor = (Realtor__c)stdController.getRecord();
      }
 
      public List<Lot__c> agencyLots{
