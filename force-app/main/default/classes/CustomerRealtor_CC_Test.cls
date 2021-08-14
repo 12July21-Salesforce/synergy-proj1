@@ -23,7 +23,7 @@ private class CustomerRealtor_CC_Test {
     static void customerRealtor() {
         CustomerRealtor_CC customerRealtorTest = new CustomerRealtor_CC();
 
-        ApexPages.StandardSetController setConTest = new ApexPages.StandardSetController(Database.getQueryLocator(
+        customerRealtorTest.setCon = new ApexPages.StandardSetController(Database.getQueryLocator(
             [SELECT Name, Realtor__r.Name FROM Customer__c ORDER BY Realtor__r.Name]
                 
         ));
