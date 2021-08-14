@@ -1,7 +1,7 @@
 <apex:page controller="CustomerRealtor_CC" lightningStylesheets="true">
     <apex:form>
+        <apex:pageMessages />
         <apex:pageBlock id="realtor_list">
-            <apex:pageMessages />
             <apex:pageBlockTable value="{! customers }" var="customer">
                 <apex:column value="{! customer.Realtor__r.Name }" />
                 <apex:column headerValue="Customers"><apex:outputLink value="{! URLFOR($Action.Customer__c.View, customer.id) }">{! customer.Name }</apex:outputLink></apex:column>

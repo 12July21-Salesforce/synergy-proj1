@@ -1,5 +1,6 @@
 <apex:page controller="RealtorCreated_CC" lightningStylesheets="true">
     <apex:form>
+        <apex:pageMessages />
         <apex:pageBlock>
             <h1 style="text-align: center" >Realtor Created Successfully!</h1>
             <apex:pageBlockButtons>

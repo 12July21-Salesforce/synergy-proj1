@@ -1,7 +1,7 @@
 <apex:page controller="CreateRealtor_CC" lightningStylesheets="true">
     <apex:form>
+        <apex:pageMessages />
         <apex:pageBlock>
-            <apex:pageMessages />
             <apex:pageBlockSection title="Enter Realtor Information">
                 <apex:inputField value="{! realtor.Name }" />
                 <apex:inputField value="{! realtor.Phone_Number__c }" />
