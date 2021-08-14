@@ -6,14 +6,14 @@ public with sharing class LotRealtorCX {
          baseRealtor = stdController.getRecord();
      }
 
-     public List<Lot__c> friendLots{
+     public List<Lot__c> agencyLots{
         get{
-            if(friendLots == null){
-                friendLots = new List<Lot__c>([ SELECT Id, Name, Customer__r.Name, Customer__r.Realtor__r.Realtor_Agency__c
+            if(agencyLots == null){
+                agencyLots = new List<Lot__c>([ SELECT Id, Name, Customer__r.Name, Customer__r.Realtor__r.Realtor_Agency__c
                                                 FROM Lot__c
                                                 WHERE Customer__r.Realtor__r.Realtor_Agency__c = :baseRealtor.Realtor_Agency__c]);
             }
-            return friendLots;
+            return agencyLots;
         }
         private set;
      }
