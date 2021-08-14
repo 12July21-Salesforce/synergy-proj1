@@ -10,11 +10,12 @@ public with sharing class CreateRealtor_CC {
     }
 
     public PageReference saveRealtor() {
-        if (realtor.Name == '') {
+        if (realtor.Name == null) {
             realtor.addError('Name', 'Realtor name is required!');
+            return null;
         } else {
             Database.upsert(realtor);
+            return Page.RealtorCreatedPage;
         }
-        return Page.RealtorCreatedPage;
     }
 }
