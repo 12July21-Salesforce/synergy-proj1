@@ -1,5 +1,5 @@
 public class NeighborhoodCompleteLots_CC {
-    private Id curId;
+    public Id curId {get; set;}
     
     
     //Grab the Id of the Neighborhood record detail page the user is currently on, to be used in the SOQL query.
@@ -15,10 +15,10 @@ public class NeighborhoodCompleteLots_CC {
                 String imagePath = '';
                 for(Neighborhood__c hood : [SELECT Name, Status__c,
                                             (SELECT Name, Home_Type__c, Status__c FROM Lots__r 
-                                              WHERE Home_Type__c = 'Spec' AND Status__c = 'Construction Complete') 
+                                              WHERE Home_Type__c = 'Spec' AND Status__c = 'Construction Complete'
+                                              ORDER BY Name ASC) 
                                             FROM Neighborhood__c
-                                            WHERE Id = :curId
-                                            ORDER BY Name ASC]){
+                                            WHERE Id = :curId]){
                                                 
                                                 //TODO: think of a better way to get picture path
                                                 for(Lot__c lot : hood.Lots__r){
@@ -48,6 +48,7 @@ public class NeighborhoodCompleteLots_CC {
             this.imagePath = imagePath;
             
         }
+        
     }
     
 }
