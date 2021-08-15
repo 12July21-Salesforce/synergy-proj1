@@ -1,5 +1,9 @@
 <apex:page standardController="Lot__c" extensions="LotShowExtension" lightningStylesheets="true">
+<<<<<<< HEAD
     <apex:form >
+=======
+    <apex:form>
+>>>>>>> Will
         <apex:pageBlock id="lotList" title="Lots">      
             <apex:pageBlockButtons >
                 <apex:commandButton value="|<" title="First" action="{!first}" disabled="{!NOT(HasPrevious)}" />

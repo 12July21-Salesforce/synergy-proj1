@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
     <availableInTouch>true</availableInTouch>
@@ -15,3 +16,9 @@
         <namespace>trlhdtips</namespace>
     </packageVersions>
 </ApexPage>
+=======
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata"> 
+    <apiVersion>52.0</apiVersion>
+    <label>LotsShow</label>
+</ApexPage>
+>>>>>>> Will
