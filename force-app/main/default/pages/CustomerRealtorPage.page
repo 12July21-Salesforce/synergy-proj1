@@ -1,12 +1,12 @@
 <apex:page controller="CustomerRealtor_CC" lightningStylesheets="true">
-    <apex:form>
+    <apex:form >
         <apex:pageMessages />
         <apex:pageBlock id="realtor_list">
             <apex:pageBlockTable value="{! customers }" var="customer">
                 <apex:column value="{! customer.Realtor__r.Name }" />
                 <apex:column headerValue="Customers"><apex:outputLink value="{! URLFOR($Action.Customer__c.View, customer.id) }">{! customer.Name }</apex:outputLink></apex:column>
             </apex:pageBlockTable>
-            <apex:pageBlockButtons>
+            <apex:pageBlockButtons >
                 <apex:commandButton action="{! newRealtor }" value="New Realtor" />
             </apex:pageBlockButtons>
             <table style="width: 100%">

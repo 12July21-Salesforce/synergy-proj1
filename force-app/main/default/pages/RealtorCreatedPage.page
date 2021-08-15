@@ -1,9 +1,9 @@
 <apex:page controller="RealtorCreated_CC" lightningStylesheets="true">
-    <apex:form>
+    <apex:form >
         <apex:pageMessages />
-        <apex:pageBlock>
+        <apex:pageBlock >
             <h1 style="text-align: center" >Realtor Created Successfully!</h1>
-            <apex:pageBlockButtons>
+            <apex:pageBlockButtons >
                 <apex:commandButton action="{! backToCustomers }" value="Return to Customers" />
             </apex:pageBlockButtons>
         </apex:pageBlock>

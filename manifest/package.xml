@@ -33,6 +33,18 @@
         <name>StaticResource</name>
     </types>
     <types>
+        <members>*</members>
+        <name>CustomSite</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ExperienceBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Network</name>
+    </types>
+    <types>
         <members>Contract</members>
         <members>Customer__c</members>
         <members>Lot__c</members>
