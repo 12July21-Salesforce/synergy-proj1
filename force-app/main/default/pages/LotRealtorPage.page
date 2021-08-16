@@ -1,4 +1,5 @@
 <apex:page standardController="Lot__c" extensions="LotRealtorCX" lightningStylesheets="true">
+<<<<<<< HEAD
     <apex:form >
         <apex:pageBlock title="Lot Lookup">
             <apex:pageBlockTable var="lotInfo" value="{!agencyLots}" >
@@ -8,4 +9,13 @@
             </apex:pageBlockTable>
         </apex:pageBlock>
     </apex:form>
+=======
+    <apex:pageBlock title="Lots Sold by Agency: {!baseLot.Customer__r.Realtor__r.Realtor_Agency__c}">
+        <apex:pageBlockTable var="lotInfo" value="{!agencyLots}">
+            <apex:column value="{!lotInfo.Name}" />
+            <apex:column value="{!lotInfo.Customer__r.Realtor__r.Name}" headerValue="Realtor"/>
+            <apex:column value="{!lotInfo.Customer__r.Name}" headerValue="Customer"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+>>>>>>> joey
 </apex:page>
