@@ -31,7 +31,7 @@ To-do list:
    
 Perform a `git clone` command
 
-* In VSCode with the Salesforce extensions and the Salesforce CLI:
+In VSCode with the Salesforce extensions and the Salesforce CLI:
 * Authorize a new Salesforce Org
 * Deploy Source in Manifest to Org
 * If continuing development, enable "Deploy on Save," "Retrieve Test Code Coverage," and "Enable SObject Refresh on Startup" in VSCode preferences
