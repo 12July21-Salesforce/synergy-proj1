@@ -8,7 +8,7 @@ Our project expanded upon Ethan's homebuilding company from project 0. We replic
 
 * Salesforce
 * Salesforce CLI - version 52.0
-* VSCode with Salesforce extensions- version 1.6
+* VSCode with Salesforce extensions - version 1.6
 * Zoom
 * Git/Github
 
