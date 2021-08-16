@@ -52,10 +52,15 @@ Custom function includes:
 ## Contributors
 
 David Betrand
+
 Ethan Jarrett
+
 Joey Slovick
+
 Murrai Scanlon
+
 Will Harris
+
 Jorge Garriga
 
 ## License
