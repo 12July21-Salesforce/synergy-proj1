@@ -1,48 +1,59 @@
-@isTest
-public class TestNCLots_CC {
+@isTest 
+public class TestNCLots_CC { 
+    
+    private static List<Neighborhood__c> testhoods;
+    private static List<Lot__c> testLots;
+    
+    @TestSetup
+    static void makeData(){ 
+        
+        testhoods = new List<Neighborhood__c>(); 
+        Neighborhood__c tn = new Neighborhood__c(); 
+        tn.Name = 'Misterogers'; 
+        tn.Status__c = 'Completed'; 
+        testhoods.add(tn); 
+        
+        testLots = new List<Lot__c>(); 
+        Lot__c tl = new Lot__c(); 
+        tl.Name = 'TL-01'; 
+        tl.Home_Type__c = 'Spec'; 
+        tl.Status__c = 'Construction Complete'; 
+        tl.Neighborhood__c = tn.Id; 
+        testLots.add(tl); 
+        
+        
+    }
+    
+    
     @isTest
-    static void positiveTest(){
+    static void testData(){
+        makeData();
         
-
-        
-        List<Neighborhood__c> testhoods = new List<Neighborhood__c>();
-        
-        Neighborhood__c tn = new Neighborhood__c();
-        tn.Name = 'Misterogers';
-        tn.Status__c = 'Completed';
-        testhoods.add(tn);
-           
-        List<Lot__c> testLots = new List<Lot__c>();
-        Lot__c tl = new Lot__c();
-        tl.Name = 'TL-01';
-        tl.Home_Type__c = 'Spec';
-        tl.Status__c = 'Construction Complete';
-        tl.Neighborhood__c = tn.Id;
-        testLots.add(tl);
-        
-        insert testhoods;
-                       
-		PageReference testPage = Page.NeighborhoodCompleteLots;
-        testPage.getParameters().put('id', tn.Id);
-        Test.setCurrentPage(testPage);
-        
-        String imagePath = 'testString';
+        PageReference testPage = Page.NeighborhoodCompleteLots;
         
         NeighborhoodCompleteLots_CC testController = new NeighborhoodCompleteLots_CC();
-        NeighborhoodCompleteLots_CC.NeighborhoodWrapper testWrapper = 
-            new NeighborhoodCompleteLots_CC.NeighborhoodWrapper(tn, tl, imagePath);
+        NeighborhoodCompleteLots_CC.NeighborhoodWrapper testWrapper;
         
-        List<NeighborhoodCompleteLots_CC.NeighborhoodWrapper> t = testController.neighborhoodList;
-        Integer listSize = t.size();
+        Test.startTest();
+        insert testhoods; 
         
-        //System.assertEquals(1, listSize);
+        //Id testId = testController.curId;
         
-
-		
-         
+        String imagePath = 'testString';  
+        testWrapper = new NeighborhoodCompleteLots_CC.NeighborhoodWrapper(testhoods.get(0), testlots.get(0), imagePath);
         
-
+        Neighborhood__c testhood = testWrapper.neighborhood;
+        Lot__c testlot = testWrapper.lot;
+		String testimage = testWrapper.imagePath;
         
+        Test.setCurrentPage(testPage);
+        System.assert(testController.neighborhoodList != null);
+        System.assert(testhood != null && testlot != null && testimage != null);
+        
+        Test.stopTest(); 
+        
+    }
+          
     
    /*
     @isTest
