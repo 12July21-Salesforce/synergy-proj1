@@ -2,10 +2,7 @@ public class NeighborhoodCompleteLots_CC {
     public Id curId {get; set;}
     
     
-<<<<<<< HEAD
-=======
     
->>>>>>> neighborhood-complete-lots
     //Grab the Id of the Neighborhood record detail page the user is currently on, to be used in the SOQL query.
     public NeighborhoodCompleteLots_CC(){
         this.curId = ApexPages.currentPage().getParameters().get('id');
@@ -17,10 +14,7 @@ public class NeighborhoodCompleteLots_CC {
             if(neighborhoodList == null){
                 neighborhoodList = new List<NeighborhoodWrapper>();
                 String imagePath = '';
-<<<<<<< HEAD
-=======
                 
->>>>>>> neighborhood-complete-lots
                 for(Neighborhood__c hood : [SELECT Name, Status__c,
                                             (SELECT Name, Home_Type__c, Status__c FROM Lots__r 
                                               WHERE Home_Type__c = 'Spec' AND Status__c = 'Construction Complete'
@@ -30,31 +24,21 @@ public class NeighborhoodCompleteLots_CC {
                                                 
                                                 //TODO: think of a better way to get picture path
                                                 for(Lot__c lot : hood.Lots__r){
-<<<<<<< HEAD
-=======
                                                     
->>>>>>> neighborhood-complete-lots
                                                     imagePath = 'house-images/' + lot.Name + '.jpg';
                                                     neighborhoodList.add(new NeighborhoodWrapper(hood, lot, imagePath));                     
                                                 }                                                     
                                             }
                 
             }
-<<<<<<< HEAD
-=======
             
->>>>>>> neighborhood-complete-lots
             return neighborhoodList;
             
         }
         set;
         
     }
-<<<<<<< HEAD
-    
-=======
        
->>>>>>> neighborhood-complete-lots
     
     //Wrapper is used to that multiple data types can be displayed in the same VF data table
     public class NeighborhoodWrapper{
@@ -71,9 +55,6 @@ public class NeighborhoodCompleteLots_CC {
         
     }
     
-<<<<<<< HEAD
-=======
 
     
->>>>>>> neighborhood-complete-lots
 }
