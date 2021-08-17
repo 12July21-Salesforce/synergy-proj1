@@ -1,5 +1,6 @@
 <apex:page controller="BuyersPage_CC" lightningStylesheets="true">
 <h1>Buyers Page</h1>
+<h2>Search for homes sold in the past amount of days</h2>
 <apex:form id="checkLots">
     <apex:panelGroup>
         <apex:inputText id="searchText" value="{!searchText}"/>
