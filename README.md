@@ -23,7 +23,7 @@ List of features ready and TODOs for future development
 To-do list:
 * Add a filter and search improvements to the homepage element
 * Hide button on Lot page for Lots that haven't been sold
-* Expand Lot search capabilities to include different time elements
+* Expand Buyer search capabilities to include different time elements
 * Improve process used for adding pictures to display on the Neighborhood page
 * Add additional filter capabilities to Lot search
 
