@@ -32,8 +32,6 @@
         <members>*</members>
         <name>StaticResource</name>
     </types>
-<<<<<<< HEAD
-=======
     <types>
         <members>*</members>
         <name>CustomSite</name>
@@ -54,16 +52,5 @@
         <members>Neighborhood__c</members>
         <name>CustomObject</name>
     </types>
-    <types>
-        <members>BigTest</members>
-        <members>LotRealtorCX</members>
-        <members>LotRealtor_Test</members>
-        <name>ApexClass</name>
-    <types>
-    <types>
-        <members>LotRealtor</members>
-        <name>ApexPage</name>
-    <types>
->>>>>>> 83096096f440b33e8dc27e77127343c69ec30816
     <version>52.0</version>
 </Package>
