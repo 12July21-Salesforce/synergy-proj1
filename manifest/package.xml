@@ -20,5 +20,17 @@
         <members>*</members>
         <name>ExperienceBundle</name>
     </types>
+    <types>
+        <members>*</members>
+        <name>Network</name>
+    </types>
+    <types>
+        <members>Contract</members>
+        <members>Customer__c</members>
+        <members>Lot__c</members>
+        <members>Realtor__c</members>
+        <members>Neighborhood__c</members>
+        <name>CustomObject</name>
+    </types>
     <version>52.0</version>
 </Package>

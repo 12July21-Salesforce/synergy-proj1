@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata"> 
+    <apiVersion>52.0</apiVersion>
+    <label>BuyersPage</label>
+</ApexPage>
+=======
 <ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
     <availableInTouch>false</availableInTouch>
@@ -15,3 +21,4 @@
         <namespace>trlhdtips</namespace>
     </packageVersions>
 </ApexPage>
+>>>>>>> 83096096f440b33e8dc27e77127343c69ec30816
