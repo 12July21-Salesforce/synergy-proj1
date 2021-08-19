@@ -5,11 +5,7 @@
       "default": true
     }
   ],
-<<<<<<< HEAD
   "name": "Project_01",
-=======
-  "name": "Project_1",
->>>>>>> 83096096f440b33e8dc27e77127343c69ec30816
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "52.0"
