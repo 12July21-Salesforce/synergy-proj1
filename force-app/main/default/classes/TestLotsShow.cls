@@ -75,8 +75,4 @@ public with sharing class TestLotsShow {
         Test.stopTest();
         //End Test
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> Will

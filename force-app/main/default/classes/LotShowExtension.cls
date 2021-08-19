@@ -62,8 +62,4 @@ public with sharing class LotShowExtension {
         FROM Lot__c 
         WHERE Status__c IN :statuses];
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> Will
